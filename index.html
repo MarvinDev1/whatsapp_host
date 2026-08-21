@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect on WhatsApp</title>
+    <!-- Fixed typo: removed '>' inside script tag declaration -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding:0;
+        }
+        body{
+            /* Fixed typo: changed 'sana-serif' to 'sans-serif' */
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color:#f0f2f5;
+            color:#333;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            min-height:100vh;
+            padding:20px;
+        }
+        .card{
+            background: #ffffff;
+            padding:30px;
+            border-radius:16px;
+            box-shadow:0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align:center;
+            width:100%;
+            /* Fixed: constrained max-width for cleaner presentation on wider screens */
+            max-width:400px;
+            margin-bottom:30px;
+        }
+        h2{
+            color:#075E54;
+            margin-bottom:8px;
+            font-size:24px;
+        }
+        p{
+            color:#666;
+            font-size:15px;
+            margin-bottom:24px;
+            line-height:1.4;
+        }
+        .wa-btn{
+            display:flex;
+            align-items:center;
+            justify-content: center;
+            background-color: #25D366;
+            color:white;
+            text-decoration:none;
+            padding:14px;
+            border-radius:10px;
+            margin-bottom:14px;
+            font-weight:600;
+            font-size:16px;
+            /* Fixed typo: changed 'tranform' to 'transform' */
+            transition:background 0.2s ease, transform 0.1s ease;
+        }
+        .wa-btn:hover{
+            background-color:#128C7E;
+        }
+        .wa-btn:active{
+            transform:scale(0.98);
+        }
+        .wa-btn.line-two{
+            background-color:#075E54;
+        }
+        .wa-btn.line-two:hover{
+            background-color:#05403a;
+        }
+        .divider{
+            width: 100%;
+            max-width: 400px;
+            border: 0;
+            height: 1px;
+            background: #ccc;
+            margin: 20px 0 40px 0;
+        }
+        .generator-panel{
+            text-align:center;
+            background: #fff;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow:0 4px 15px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 400px;
+        }
+        .generator-panel h3{
+            margin-bottom:16px;
+            color:#444;
+        }
+        #qrcode{
+            display:inline-block;
+            padding:12px;
+            background:white;
+            border: 1px solid #e0e0e0;
+            border-radius:8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Connect on WhatsApp</h2>
+        <!-- Fixed typos: extra spaces and 'Pleas' -> 'Please' -->
+        <p>Scan successful! Please select the account you would wish to contact below:</p>
+        
+        <!-- Fixed typo in text parameter: '1' -> 'I' -->
+        <a href="https://wa.me/256781438172?text=Hello!%20I%20scanned%20QR%20code%20and%20need%20assistance%20on%20Line%20One."
+           class="wa-btn"
+           target="_blank"
+           rel="noopener noreferrer">
+            Chat on Line One
+        </a>
+
+        <!-- Added 'line-two' class so custom hover styling works, fixed '1' -> 'I' in URL -->
+        <a href="https://wa.me/256752761648?text=Hello!%20I%20scanned%20QR%20code%20and%20need%20assistance%20on%20Line%20Two."
+           class="wa-btn line-two"
+           target="_blank"
+           rel="noopener noreferrer">
+            Chat on Line Two
+        </a>
+    </div>
+
+    <hr class="divider">
+
+    <div class="generator-panel">
+        <h3>Your Master QR Code</h3>
+        <div id="qrcode"></div>
+    </div>
+
+    <script>
+        // Fixed typo: window.locatio.href -> window.location.href
+        const liveLandingPageURL = window.location.href;
+
+        new QRCode(document.getElementById("qrcode"), {
+            text: liveLandingPageURL,
+            width: 200,
+            // Fixed typo: 'heigh' -> 'height'
+            height: 200,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            // Fixed typo: QRCode.CorrectLeve.H -> QRCode.CorrectLevel.H
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+</body>
+</html>
